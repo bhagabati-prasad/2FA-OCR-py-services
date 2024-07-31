@@ -1,0 +1,271 @@
+2024-07-01 11:02:03,764 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-01 11:02:34,576 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-01 11:12:41,216 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-01 18:34:45,884 [ERROR] docs_logger: Error occurred while extracting Aadhaar Card BACK side.
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 255, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 86, in aadhaar_back_route
+    data = doc_scanner(processed_img["gray"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\utils\doc_scanner.py", line 11, in doc_scanner
+    return docScanner.image_to_string(image, lang="eng", config="--psm 4")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 423, in image_to_string
+    return {
+           ^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 426, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 288, in run_and_get_output
+    run_tesseract(**kwargs)
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 260, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2024-07-01 18:35:42,863 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-01 18:36:15,879 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-01 18:40:15,591 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-01 18:42:24,386 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-01 18:44:09,351 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-01 18:44:32,157 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-01 18:46:52,123 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-01 18:48:23,133 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-01 18:49:05,375 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-01 18:49:11,189 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-01 18:54:22,801 [INFO] docs_logger: Extracting PAN details.
+2024-07-01 18:54:34,530 [INFO] docs_logger: Extracting PAN details.
+2024-07-01 18:54:43,155 [INFO] docs_logger: Extracting PAN details.
+2024-07-01 18:54:53,034 [INFO] docs_logger: Extracting PAN details.
+2024-07-01 18:55:07,006 [INFO] docs_logger: Extracting PAN details.
+2024-07-01 18:57:50,803 [INFO] docs_logger: Extracting payslip details.
+2024-07-01 18:58:49,942 [INFO] docs_logger: Extracting payslip details.
+2024-07-01 18:59:44,083 [INFO] docs_logger: Extracting payslip details.
+2024-07-01 18:59:53,345 [INFO] docs_logger: Extracting payslip details.
+2024-07-01 19:04:20,765 [INFO] docs_logger: Extracting account statement details.
+2024-07-01 19:06:28,028 [INFO] docs_logger: Extracting account statement details.
+2024-07-01 19:10:06,882 [INFO] docs_logger: Extracting payslip details.
+2024-07-02 11:40:03,075 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-02 11:49:10,310 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-02 12:17:23,690 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-03 11:40:15,889 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-03 11:40:28,836 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-03 11:44:03,117 [INFO] docs_logger: Extracting Aadhaar FRONT details.
+2024-07-03 11:46:33,144 [INFO] docs_logger: Extracting Aadhaar BACK details.
+2024-07-04 13:10:23,602 [ERROR] docs_logger: Error occurred while extracting PAN Card.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 172, in passport_route
+    passport_data = extract_passport_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 115, in extract_passport_data
+    image = cv2.imread(image_path)
+            ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Can't convert object to 'str' for 'filename'
+2024-07-04 13:11:46,549 [ERROR] docs_logger: Error occurred while extracting PAN Card.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 172, in passport_route
+    passport_data = extract_passport_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 115, in extract_passport_data
+    processed_images = __preprocess_passport_image(image)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 10, in __preprocess_passport_image
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.9.0) :-1: error: (-5:Bad argument) in function 'cvtColor'
+> Overload resolution failed:
+>  - src is not a numpy array, neither a scalar
+>  - Expected Ptr<cv::UMat> for argument 'src'
+
+2024-07-04 13:16:09,081 [INFO] docs_logger: Extracting PAN details.
+2024-07-04 13:20:23,700 [INFO] docs_logger: Extracting PAN details.
+2024-07-04 13:21:05,982 [INFO] docs_logger: Extracting PAN details.
+2024-07-04 13:32:54,896 [INFO] docs_logger: Extracting PAN details.
+2024-07-04 13:33:40,909 [INFO] docs_logger: Extracting PAN details.
+2024-07-04 13:37:02,589 [INFO] docs_logger: Extracting PAN details.
+2024-07-04 17:47:32,172 [INFO] docs_logger: Extracting Passport details.
+2024-07-04 17:47:59,999 [INFO] docs_logger: Extracting Passport details.
+2024-07-04 17:48:25,605 [INFO] docs_logger: Extracting Passport details.
+2024-07-04 17:50:05,618 [INFO] docs_logger: Extracting Passport Front details.
+2024-07-04 17:50:48,734 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 17:54:54,692 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 17:58:52,758 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:01:28,192 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:02:56,702 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:03:59,846 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:06:01,563 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:06:58,097 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:12:27,907 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:13:13,242 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:23:18,535 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:29:08,895 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:30:42,338 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:31:28,245 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:31:51,208 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:32:41,610 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:34:15,065 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:35:21,893 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:36:56,175 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:38:35,039 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:41:10,463 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:44:04,081 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 18:45:14,349 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-04 19:03:30,817 [ERROR] docs_logger: Error occurred while extracting Passport.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 208, in passport_back_route
+    passport_data = extract_passport_back_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 230, in extract_passport_back_data
+    result = __extract_passport_back(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 161, in __extract_passport_back
+    if not args.father_name:
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'father_name'
+2024-07-04 19:05:13,822 [ERROR] docs_logger: Error occurred while extracting Passport.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 208, in passport_back_route
+    passport_data = extract_passport_back_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 230, in extract_passport_back_data
+    result = __extract_passport_back(gray, 6)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 173, in __extract_passport_back
+    if not father_name:
+           ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'father_name' where it is not associated with a value
+2024-07-08 18:00:30,526 [ERROR] docs_logger: Error occurred while extracting Passport.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 175, in passport_front_route
+    passport_data = extract_passport_front_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 146, in extract_passport_front_data
+    data = pytesseract.image_to_string(image, config=custom_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 423, in image_to_string
+    return {
+           ^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 426, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 277, in run_and_get_output
+    with save(image) as (temp_name, input_filename):
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 197, in save
+    image, extension = prepare(image)
+                       ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 174, in prepare
+    raise TypeError('Unsupported image object')
+TypeError: Unsupported image object
+2024-07-08 18:01:31,079 [ERROR] docs_logger: Error occurred while extracting Passport.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 175, in passport_front_route
+    passport_data = extract_passport_front_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 146, in extract_passport_front_data
+    data = pytesseract.image_to_string(image, config=custom_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 423, in image_to_string
+    return {
+           ^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 426, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 277, in run_and_get_output
+    with save(image) as (temp_name, input_filename):
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 197, in save
+    image, extension = prepare(image)
+                       ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 174, in prepare
+    raise TypeError('Unsupported image object')
+TypeError: Unsupported image object
+2024-07-08 18:01:45,335 [ERROR] docs_logger: Error occurred while extracting Passport.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 175, in passport_front_route
+    passport_data = extract_passport_front_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 146, in extract_passport_front_data
+    data = pytesseract.image_to_string(image, config=custom_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 423, in image_to_string
+    return {
+           ^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 426, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 277, in run_and_get_output
+    with save(image) as (temp_name, input_filename):
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 197, in save
+    image, extension = prepare(image)
+                       ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\anaconda3\envs\ocr\Lib\site-packages\pytesseract\pytesseract.py", line 174, in prepare
+    raise TypeError('Unsupported image object')
+TypeError: Unsupported image object
+2024-07-08 18:03:37,933 [INFO] docs_logger: Extracting Passport Front details.
+2024-07-08 18:05:23,751 [ERROR] docs_logger: Error occurred while extracting Passport.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 208, in passport_back_route
+    passport_data = extract_passport_back_data(pdf_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\passport_service.py", line 356, in extract_passport_back_data
+    custom_config = f"--psm {psm}"
+                             ^^^
+NameError: name 'psm' is not defined
+2024-07-08 18:06:06,881 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-08 18:06:40,843 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-08 18:08:06,322 [INFO] docs_logger: Extracting Passport Back details.
+2024-07-08 18:10:11,796 [INFO] docs_logger: Extracting Passport Front details.
+2024-07-08 18:11:38,384 [INFO] docs_logger: Extracting Passport Front details.
+2024-07-15 11:15:54,705 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-15 11:39:06,223 [ERROR] docs_logger: Error occurred while extracting Vehicle Quotation.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 274, in vehicle_quotation_route
+    extracted_data = image_to_text(pdf_file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\utils\image_to_text.py", line 21, in image_to_text
+    with open(pdf_file, "rb") as file:
+         ^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not FileStorage
+2024-07-15 11:41:53,602 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-15 11:51:49,333 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-15 11:53:50,993 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-19 11:32:08,654 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 11:35:07,134 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 11:39:43,724 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-19 11:41:01,190 [INFO] docs_logger: Extracting payslip details.
+2024-07-19 11:41:44,842 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 11:54:29,845 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 11:55:17,921 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 12:19:29,665 [ERROR] docs_logger: Error occurred while extracting Account Statement.
+Traceback (most recent call last):
+  File "D:\pdf_extraction\app\routes\doc_routes.py", line 307, in account_statement_route
+    basic_info = extract_basic_info(extracted_data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pdf_extraction\app\services\docs\account_statement_service.py", line 60, in extract_basic_info
+    text = data["text"]
+           ~~~~^^^^^^^^
+TypeError: 'int' object is not subscriptable
+2024-07-19 12:22:26,068 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 12:34:15,604 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 12:36:23,158 [INFO] docs_logger: Extracting account statement details.
+2024-07-19 12:38:27,321 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-19 12:40:13,624 [INFO] docs_logger: Extracting vehicle quotation details.
+2024-07-19 12:40:19,215 [INFO] docs_logger: Extracting account statement details.
